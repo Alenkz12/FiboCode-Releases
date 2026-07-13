@@ -1,8 +1,14 @@
 # FiboCode
 
-FiboCode is a local-first AI code analysis desktop app that brings together a terminal, a code editor, and an AI chat to help you understand, analyze, and explore codebases right on your own machine. Your code and data never leave your computer.
+> **Understand Every Codebase.**
+>
+> From Code to Understanding. For humans and AI agents.
 
-> This is the **distribution repository** — it only hosts release binaries and update metadata. The source code lives elsewhere.
+FiboCode isn't just another AI IDE, and it isn't about writing code faster. It's a **local-first code understanding workbench for both humans and AI agents**. Instead of generating a few more lines of code, it helps you keep making sense of complex codebases over time.
+
+FiboCode weaves Code, Docs, and Graphs into one traceable information flow — source is the ground truth, docs explain it, and graphs reveal the relationships between them. Alongside spec, design, diff, terminal context, and your local workflow, it lets both developers and AI understand *why* the software became what it is today. Your code and data never leave your machine.
+
+> This is the **distribution repository** — it only hosts release binaries and update metadata.
 
 ## Download & Install
 
