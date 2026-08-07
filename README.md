@@ -1,4 +1,4 @@
-# FiboCode — Codebase Understanding for Humans and Coding Agents
+# FiboCode — A Living Codebase Knowledge Base for Agent Workflows
 
 > **Understand Every Codebase.**
 >
@@ -6,9 +6,11 @@
 
 [Official Website](https://fibocode.ai/) · [Download FiboCode](https://fibocode.ai/download) · [Quick Start Documentation](https://fibocode.ai/docs) · [Latest GitHub Release](https://github.com/Alenkz12/FiboCode-Releases/releases/latest)
 
-FiboCode is a local-first code editor and living codebase knowledge base that connects source code, Markdown documentation, relationship graphs, specifications, designs, plans, change records, and project history in one traceable workspace.
+FiboCode is a local-first code editor with a living codebase knowledge base for agent workflows. It connects source code, Markdown documentation, relationship graphs, specifications, designs, plans, change records, and project history in one traceable workspace.
 
-It helps developers understand unfamiliar and legacy codebases, give coding agents persistent repository context, follow spec-driven development workflows, and review AI-generated code without giving up human control. FiboCode works alongside the Agent CLI you already use—including Claude Code, Codex, Gemini CLI, OpenCode, and other terminal-based coding agents.
+Keep the Agent CLI you already trust. FiboCode gives it persistent, repository-native context—and gives you an IDE-grade surface for reviewing the code it changes. It works alongside Claude Code, Codex, Gemini CLI, OpenCode, and other terminal-based coding agents instead of asking you to replace your existing workflow.
+
+FiboCode is built for developers and teams who need to understand unfamiliar or long-lived codebases, preserve project knowledge across agent sessions, turn requirements into traceable changes, and keep the final review under human control.
 
 > **About this repository:** this is the official FiboCode distribution repository. It hosts release binaries and update metadata; the product source code is not published here.
 
@@ -21,17 +23,19 @@ It helps developers understand unfamiliar and legacy codebases, give coding agen
 | [Spec-Driven Development](https://fibocode.ai/features/spec-driven-development) | Turn requirements into specifications, designs, implementation plans, agent execution, code review, and traceable change records. |
 | [AI Code Review](https://fibocode.ai/features/ai-code-review) | Inspect agent-generated changes through automatic diff summaries, focused hunks, single-column diff review, message snapshots, history, and rollback while keeping the final judgment human. |
 
-## One Connected Development Workflow
+## One Connected Agent Workflow
 
 ```mermaid
 flowchart LR
-  source_code_001["Source code"] -->|stays linked to| shared_context_002["Docs, graphs, specs, and history"]
-  shared_context_002 -->|supports| human_agent_003["Developers and coding agents"]
-  human_agent_003 -->|produce| traceable_changes_004["Traceable changes"]
-  traceable_changes_004 -->|remain under| human_review_005["Human review and control"]
+  source_code_001["Editable source code"] -->|grounds| knowledge_base_002["Docs, graphs, specs, and history"]
+  knowledge_base_002 -->|provides persistent context| human_agent_003["Developers and coding agents"]
+  human_agent_003 -->|plan and implement| traceable_changes_004["Traceable changes"]
+  traceable_changes_004 -->|are inspected through| human_review_005["Human review and control"]
+  human_review_005 -->|accepted changes update| source_code_001
+  human_review_005 -->|records decisions in| knowledge_base_002
 ```
 
-Source code remains the ground truth. Documentation explains it, graphs reveal relationships, and specifications and change records preserve why the software evolved. This shared context helps both people and agents understand, navigate, modify, and review the same codebase.
+Source code remains the ground truth. Documentation explains it, graphs reveal relationships, and specifications and change records preserve why the software evolved. After a reviewed change returns to the codebase, its decisions and evidence strengthen the shared context available for the next human or agent task.
 
 ## Download and Install
 
@@ -64,9 +68,6 @@ chmod +x FiboCode-<version>-x86_64.AppImage
 
 FiboCode processes your source code and workspace data locally and does not upload or store them on FiboCode's own servers. If you choose to invoke a third-party AI model or Agent CLI, the code or context you send is transmitted directly to that provider under its own terms. See the [FiboCode Privacy Policy](https://fibocode.ai/privacy) for details.
 
-## Auto Update
-
-FiboCode checks this repository for new versions on startup. When an update is available, you can download and install it from within the app.
 
 ## Learn More
 
@@ -91,7 +92,7 @@ Found a bug or have a feature request?
 ---
 name: FiboCode Release Repository README
 
-update-time: 2026-08-07 05:37
+update-time: 2026-08-07 05:55
 
 description: Official FiboCode release repository overview with product capabilities, platform downloads, documentation, support channels, and links to fibocode.ai
 
