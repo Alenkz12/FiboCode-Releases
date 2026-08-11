@@ -64,9 +64,32 @@ chmod +x FiboCode-<version>-x86_64.AppImage
 ./FiboCode-<version>-x86_64.AppImage
 ```
 
-## Local-First Privacy
+## Local-First Privacy and Data Boundaries
 
-FiboCode processes your source code and workspace data locally and does not upload or store them on FiboCode's own servers. If you choose to invoke a third-party AI model or Agent CLI, the code or context you send is transmitted directly to that provider under its own terms. See the [FiboCode Privacy Policy](https://fibocode.ai/privacy) for details.
+FiboCode is local-first, but using it with a remote AI service is not the same as using a fully offline application. FiboCode does not upload or store your source code or workspace data on FiboCode-controlled servers. When you invoke a remote AI model, relevant content is transmitted directly to the provider you configured so it can fulfill the request.
+
+| Data | Default location | When it may leave your device |
+| --- | --- | --- |
+| Source code and project files | Your workspace | A code-analysis or chat request sent to a remote model may include the selected file's full contents, path, and related context. |
+| Generated analysis, summaries, and graphs | Your project's `.fibo/analysis` directory | They may be sent when a remote-model request uses them as context or asks the model to summarize them. |
+| Model Provider API credentials | Your local FiboCode configuration | The credential is sent to the corresponding Provider for authentication; FiboCode does not receive it through a FiboCode-controlled service. |
+| Information submitted through a fibocode.ai form | The website service | It leaves your device only when you choose to submit the form. |
+
+```mermaid
+flowchart LR
+  local_workspace_001["Local workspace"] -->|processed on the device| local_analysis_002["Local analysis artifacts"]
+  local_workspace_001 -->|selected content in a remote request| chosen_provider_003["User-configured AI Provider"]
+  local_analysis_002 -->|used as remote context| chosen_provider_003
+  chosen_provider_003 -->|governed by| provider_terms_004["Provider privacy policy and terms"]
+```
+
+The Provider—not the FiboCode maintainer—controls its own data retention, training, and deletion practices. Before using a private or sensitive repository, review the files that can be analyzed, remove secrets such as API keys, passwords, and tokens, and check the Provider's current policy. You can also configure an OpenAI-compatible endpoint that you operate or otherwise trust.
+
+See the [FiboCode Privacy Policy](https://fibocode.ai/privacy) for the complete disclosure.
+
+## Security and Maintainer
+
+FiboCode is independently maintained by the FiboCode maintainer; this repository does not represent a separate security team or a registered company. Please report suspected code, credential, or local-data exposure privately by following the [FiboCode Security Policy](https://github.com/Alenkz12/FiboCode-Releases/security/policy). Use public Issues for ordinary bugs and feature requests, but do not post real secrets, private source code, or personal data there.
 
 
 ## Learn More
@@ -92,8 +115,8 @@ Found a bug or have a feature request?
 ---
 name: FiboCode Release Repository README
 
-update-time: 2026-08-07 05:55
+update-time: 2026-08-11 08:06
 
-description: Official FiboCode release repository overview with product capabilities, platform downloads, documentation, support channels, and links to fibocode.ai
+description: FiboCode downloads, data boundaries, and security reporting.
 
 ---
