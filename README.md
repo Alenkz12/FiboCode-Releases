@@ -51,7 +51,9 @@ For the easiest platform-specific download, visit the official [FiboCode downloa
 
 1. Open the `.dmg` file.
 2. Drag FiboCode into the Applications folder.
-3. If macOS blocks the first launch, open **System Settings → Privacy & Security** and choose **Open Anyway**.
+3. Launch FiboCode from the Applications folder.
+
+FiboCode for macOS is signed with an Apple Developer ID and notarized by Apple. If macOS reports that the developer cannot be verified, do not bypass the warning. Download FiboCode again from the [official FiboCode website](https://fibocode.ai/download) or the [official GitHub Releases page](https://github.com/Alenkz12/FiboCode-Releases/releases/latest), then report the issue through the [FiboCode Security Policy](https://github.com/Alenkz12/FiboCode-Releases/security/policy).
 
 ### Windows
 
@@ -115,8 +117,8 @@ Found a bug or have a feature request?
 ---
 name: FiboCode Release Repository README
 
-update-time: 2026-08-11 08:06
+update-time: 2026-08-11 22:18
 
-description: FiboCode downloads, data boundaries, and security reporting.
+description: FiboCode downloads, data boundaries, security reporting, and signed macOS installation guidance.
 
 ---
